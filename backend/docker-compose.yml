@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:14
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=1234567890
+      - POSTGRES_DB=saglpp
+    # volumes:
+    #   - db_data:/var/lib/postgresql/data
+  # backend:
+  #   build: .
+  #   ports:
+  #     - "3001:3001"
+  #   depends_on:
+  #     - db
+  #   environment:
+  #     - DATABASE_URL=postgresql://myuser:mysecretpassword@db:5432/mydb
+# volumes:
+#   db_data:

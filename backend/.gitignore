@@ -1,0 +1,49 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Testing
+coverage/
+.nyc_output/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Prisma
+prisma/src/
+.prisma/client/               #Generated prisma client files
+prisma/migrations/ .env.local #local development .env file
+prisma/migrations/schema.prisma
+
+# Logs and other output files
+logs/
+output/
+*.log
+
+# Temporary files
+tmp/
+*.tmp
+
+# Build artifacts
+build/
+dist/
+out/
+*.zip
+*.tar.gz
+
+# Other common files
+*.orig
+*.bak
+*.swp
+~*

@@ -1,12 +1,5 @@
-// backend/src/db.js
-const { Pool } = require('pg');
+const { PrismaClient } = require('@prisma/client');
 
-const pool = new Pool({
-  user: 'your_db_user',
-  host: 'your_db_host',
-  database: 'your_db_name',
-  password: 'your_db_password',
-  port: 5432, //Default Postgres port
-});
+const prisma = new PrismaClient();
 
-module.exports = pool;
+module.exports = prisma;
