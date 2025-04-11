@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./src/app.js"
+    "dev": "nodemon ./src/app.js",
+    "seed": "node ./src/seed.js"
   },
   "keywords": [],
   "author": "",
@@ -17,5 +18,8 @@
     "express": "^5.1.0",
     "nodemon": "^3.1.9",
     "pg": "^8.14.1"
+  },
+  "devDependencies": {
+    "prisma": "^6.6.0"
   }
 }

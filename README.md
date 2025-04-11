@@ -8,6 +8,7 @@ Sistem automatizat de gestionare a locurilor de parcare publice
 
 ```code
 cd backend
+docker compose down -v
 docker compose up -d
 npx prisma generate
 npx prisma db push
