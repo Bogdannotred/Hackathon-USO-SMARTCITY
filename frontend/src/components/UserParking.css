@@ -1,0 +1,36 @@
+.user-parking {
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.user-parking-title {
+  color: #2d3748;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.user-parking-content {
+  padding: 16px;
+  border-radius: 12px;
+  color: white;
+  margin-bottom: 20px;
+  background-color: #3b82f6;
+}
+
+.user-parking-spot {
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+.user-parking-details {
+  opacity: 0.9;
+}
+
+.user-parking-detail {
+  margin-bottom: 4px;
+}

@@ -1,0 +1,42 @@
+.spot-details {
+  padding: 24px;
+  border-radius: 16px;
+  margin-top: 24px;
+  border: 1px solid #e2e8f0;
+  background-color: white;
+}
+
+.spot-details-title {
+  margin-bottom: 16px;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.spot-details-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.spot-status-available {
+  color: #48bb78;
+}
+
+.spot-status-occupied {
+  color: #e53e3e;
+}
+
+.close-details-button {
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: #e2e8f0;
+  color: #2d3748;
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+.close-details-button:hover {
+  background-color: #cbd5e0;
+}

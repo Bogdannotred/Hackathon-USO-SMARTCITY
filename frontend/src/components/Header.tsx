@@ -1,11 +1,20 @@
-import React, { useState } from "react";
-import { User } from "./types";
+import { useState } from "react";
+import "./Header.css";
 
-interface HeaderProps {
-  user: User;
+interface User {
+  name: string;
+  email: string;
+  avatar: string;
 }
 
-export const Header: React.FC<HeaderProps> = ({ user }) => {
+const Header = () => {
+  const [user] = useState<User>({
+    name: "John Doe",
+    email: "john@example.com",
+    avatar:
+      "https://images.pexels.com/photos/4098343/pexels-photo-4098343.jpeg",
+  });
+
   const [isProfileOpen, setIsProfileOpen] = useState(false);
 
   const toggleProfile = () => {
@@ -13,41 +22,37 @@ export const Header: React.FC<HeaderProps> = ({ user }) => {
   };
 
   return (
-    <header className="sticky top-0 z-100 backdrop-blur-md border-b border-white/20 py-4 px-8">
-      <div className="max-w-[1200px] mx-0 flex justify-between items-center">
-        <div className="flex items-center gap-3">
-          <svg className="w-8 h-8 text-blue-500" viewBox="0 0 24 24">
+    <header className="header">
+      <div className="header-container">
+        <div className="logo-container">
+          <svg className="logo-icon" viewBox="0 0 24 24">
             <path
               fill="currentColor"
               d="M13 3H6v18h4v-6h3c3.31 0 6-2.69 6-6s-2.69-6-6-6zm.2 8H10V7h3.2c1.1 0 2 .9 2 2s-.9 2-2 2z"
             />
           </svg>
-          <span className="font-bold text-blue-950">SmartPark</span>
+          <div className="logo-text">SmartPark</div>
         </div>
-
-        <div className="flex items-center gap-4">
-          <div className="relative">
-            <button
-              onClick={toggleProfile}
-              className="flex items-center gap-2 p-2 rounded border-none"
-            >
+        <div className="profile-container">
+          <div className="profile-wrapper">
+            <button onClick={toggleProfile} className="profile-button">
               <img
-                src={user.avatar}
+                loading="lazy"
                 alt="Profile picture"
-                className="w-10 h-10 rounded-full object-cover aspect-square overflow-hidden"
+                src={user.avatar}
+                className="profile-image"
               />
-              <span className="text-blue-950 font-medium">{user.name}</span>
+              <div className="profile-name">{user.name}</div>
             </button>
-
             {isProfileOpen && (
-              <div className="absolute top-full right-0 mt-2 rounded-xl p-4 w-60 bg-white shadow-xl">
-                <div className="border-b border-slate-200 pb-3 mb-3">
-                  <div className="font-semibold text-blue-950">{user.name}</div>
-                  <div className="text-slate-500">{user.email}</div>
+              <div className="profile-dropdown">
+                <div className="profile-info">
+                  <div className="profile-info-name">{user.name}</div>
+                  <div className="profile-info-email">{user.email}</div>
                 </div>
-                <div className="flex flex-col gap-2">
-                  <button className="w-full py-3 px-3 rounded-lg border-none bg-blue-500 text-white font-semibold flex items-center justify-center gap-2">
-                    <svg className="w-5 h-5" viewBox="0 0 24 24">
+                <div className="profile-actions">
+                  <button className="profile-action-button account-button">
+                    <svg className="profile-action-icon" viewBox="0 0 24 24">
                       <path
                         fill="currentColor"
                         d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
@@ -55,8 +60,8 @@ export const Header: React.FC<HeaderProps> = ({ user }) => {
                     </svg>
                     <span>Account</span>
                   </button>
-                  <button className="w-full py-3 px-3 rounded-lg border border-red-500 text-red-500 font-semibold flex items-center justify-center gap-2">
-                    <svg className="w-5 h-5" viewBox="0 0 24 24">
+                  <button className="profile-action-button logout-button">
+                    <svg className="profile-action-icon" viewBox="0 0 24 24">
                       <path
                         fill="currentColor"
                         d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"
@@ -73,3 +78,5 @@ export const Header: React.FC<HeaderProps> = ({ user }) => {
     </header>
   );
 };
+
+export default Header;

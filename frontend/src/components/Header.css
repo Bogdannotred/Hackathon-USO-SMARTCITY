@@ -1,0 +1,132 @@
+.header {
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 16px 32px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  color: #3b82f6;
+}
+
+.logo-text {
+  font-weight: 700;
+  color: #1a365d;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.profile-wrapper {
+  position: relative;
+}
+
+.profile-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.profile-image {
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile-name {
+  color: #1a365d;
+  font-weight: 500;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  border-radius: 12px;
+  padding: 16px;
+  width: 240px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 101;
+}
+
+.profile-info {
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+}
+
+.profile-info-name {
+  font-weight: 600;
+  color: #1a365d;
+}
+
+.profile-info-email {
+  color: #64748b;
+}
+
+.profile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.profile-action-button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.profile-action-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.account-button {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.logout-button {
+  background-color: transparent;
+  border: 1px solid #e53e3e;
+  color: #e53e3e;
+}
