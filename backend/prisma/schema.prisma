@@ -21,13 +21,13 @@ model User {
 
 model ParkingLot {
   id              Int            @id @default(autoincrement())
-  name            String         @unique // Add the unique constraint here
+  name            String         @unique
   location        String?
-  geoLocation     Json? // GeoJSON field
-  price           Float          @default(10)
-  totalSpaces     Int            @default(0)
-  availableSpaces Int            @default(0)
-  parkingSpaces   ParkingSpace[] // 1:M relation
+  geoLocation     Json?
+  totalSpaces     Int
+  availableSpaces Int
+  price           Float
+  parkingSpaces   ParkingSpace[]
 }
 
 model ParkingSpace {
