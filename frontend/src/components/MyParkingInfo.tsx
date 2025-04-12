@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { MyParkingData } from "./types";
 
@@ -9,30 +7,30 @@ interface MyParkingInfoProps {
 
 export const MyParkingInfo: React.FC<MyParkingInfoProps> = ({ myParking }) => {
   return (
-    <section>
-      <h3 className="mb-4 text-xl font-semibold text-gray-700">
+    <div>
+      <h3 className="text-gray-700 mb-4 font-semibold text-xl">
         My Parking Spot
       </h3>
-      <div className="p-4 mb-5 rounded-xl text-[white] bg-blue-500">
-        <div className="mb-2 text-xl font-semibold">
+      <div className="p-4 rounded-xl bg-blue-500 text-white mb-5">
+        <div className="font-semibold mb-2 flex">
           <span>Spot </span>
           <span>{myParking.spot}</span>
         </div>
-        <div className="text-sm opacity-90">
-          <div className="mb-1">
+        <div className="opacity-90">
+          <div className="mb-1 flex gap-1">
             <span>Location: </span>
             <span>{myParking.location}</span>
           </div>
-          <div className="mb-1">
+          <div className="mb-1 flex gap-1">
             <span>Vehicle: </span>
             <span>{myParking.vehicle}</span>
           </div>
-          <div>
+          <div className="flex gap-1">
             <span>Time Remaining: </span>
             <span>{myParking.remainingTime}</span>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };

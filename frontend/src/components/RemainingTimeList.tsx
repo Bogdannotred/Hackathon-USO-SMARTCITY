@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import { RemainingTimeEntry } from "./types";
 
@@ -15,13 +13,13 @@ export const RemainingTimeList: React.FC<RemainingTimeListProps> = ({
       {entries.map((entry, index) => (
         <div
           key={index}
-          className="p-3 rounded-lg border border-solid bg-slate-50 border-slate-200"
+          className="p-3 rounded-lg border border-slate-200 bg-slate-50"
         >
-          <div className="mb-1 font-medium">
+          <div className="font-medium mb-1 flex gap-1">
             <span>Spot </span>
             <span>{entry.spot}</span>
           </div>
-          <div className="text-sm text-slate-500">
+          <div className="text-slate-500 flex gap-1">
             <span>{entry.remainingTime}</span>
             {!entry.remainingTime.includes("remaining") && (
               <span> remaining</span>

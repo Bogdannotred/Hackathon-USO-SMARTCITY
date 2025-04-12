@@ -8,7 +8,7 @@ export interface ParkingSpotData {
   id: string | number;
   number: string;
   status: "available" | "occupied";
-  location?: string;
+  location: string;
 }
 
 export interface MyParkingData {
@@ -20,7 +20,7 @@ export interface MyParkingData {
 }
 
 export interface ParkingHistoryEntry {
-  id: number;
+  id: string | number;
   spot: string;
   entryTime: string;
   exitTime: string | null;
@@ -32,4 +32,9 @@ export interface ParkingHistoryEntry {
 export interface RemainingTimeEntry {
   spot: string;
   remainingTime: string;
+}
+
+export interface ParkingLocationInfo {
+  name: string;
+  availableSpots: number;
 }
