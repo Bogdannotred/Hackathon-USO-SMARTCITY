@@ -2,19 +2,26 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './RegisterForm.css';
+import { auth, createUserWithEmailAndPassword } from './firebase'; // Asigură-te că ai importat corect funcțiile din firebase.ts
 
 function RegisterForm() {
   const navigate = useNavigate(); // Hook-ul pentru navigare
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState<string | null>(null); // Pentru gestionarea erorilor
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Aici ai putea face validarea, apelul API etc.
-    console.log('Registered with:', email, password);
-    
-    // După înregistrare, navighezi la pagina de login
-    navigate('/login');
+
+    try {
+      // Crează un utilizator cu email și parolă folosind Firebase
+      await createUserWithEmailAndPassword(auth, email, password);
+      
+      // După ce utilizatorul a fost creat, navighează către pagina de login
+      navigate('/login');
+    } catch (err: any) {
+      setError('Error creating account: ' + err.message); // Gestionează erorile de la Firebase
+    }
   };
 
   return (
@@ -41,6 +48,8 @@ function RegisterForm() {
           placeholder="••••••••"
           required
         />
+
+        {error && <p style={{ color: 'red' }}>{error}</p>} {/* Afișează erorile, dacă există */}
 
         <button type="submit">Register</button>
 
