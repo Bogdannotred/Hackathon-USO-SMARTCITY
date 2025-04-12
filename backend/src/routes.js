@@ -1,46 +1,60 @@
 const express = require('express');
 const router = express.Router();
-const bcrypt = require('bcrypt');
-const prisma = require('./db');
+const { PrismaClient } = require('../prisma/src/generated/client'); // Adjust path if necessary. This assumes it is in src/generated/client
+const prisma = new PrismaClient();
 
+
+//Get all parking space names
 router.get('/', async (req, res) => {
-  try {
-    res.status(201).status(200).json({ message: 'Welcome to the API!' });
-  } catch (error) {
-    console.error("Registration error:", error);
-    res.status(500).json({ error: 'Failed to register user' });
-  }
-});
-
-router.post('/register', async (req, res) => {
-  const { email, name, password } = req.body;
-  try {
-    const hashedPassword = await bcrypt.hash(password, 10);
-    const newUser = await prisma.user.create({ data: { email, name, password: hashedPassword } });
-    res.status(201).json(newUser);
-  } catch (error) {
-    console.error("Registration error:", error);
-    res.status(500).json({ error: 'Failed to register user' });
-  }
-});
-
-router.post('/login', async (req, res) => {
-  const { email, password } = req.body;
-  try {
-    const user = await prisma.user.findUnique({ where: { email } });
-    if (!user) {
-      return res.status(401).json({ error: 'Incorrect email or password' });
+    try{
+        
+        res.json({message: "Welcome to the Parking Space API"});
+    }catch(error){
+        console.error("Error fetching parking space names:", error);
+        res.status(500).json({error: "Failed to fetch parking space names"});
     }
-
-    const passwordMatch = await bcrypt.compare(password, user.password);
-    if (!passwordMatch) {
-      return res.status(401).json({ error: 'Incorrect email or password' });
-    }
-    res.json({ message: 'Login successful', userId: user.id });
-  } catch (error) {
-    console.error("Login error:", error);
-    res.status(500).json({ error: 'Failed to login' });
-  }
 });
+
+router.get('/parkingspaces/names', async (req, res) => {
+    try{
+        const parkingSpaces = await prisma.parkingSpace.findMany({select: {parkingSpaceName: true}});
+        res.json(parkingSpaces);
+    }catch(error){
+        console.error("Error fetching parking space names:", error);
+        res.status(500).json({error: "Failed to fetch parking space names"});
+    }
+});
+
+//Get all parking spaces
+router.get('/parkingspaces', async (req, res) => {
+    try{
+        const parkingSpaces = await prisma.parkingSpace.findMany();
+        res.json(parkingSpaces);
+    }catch(error){
+        console.error("Error fetching parking spaces:", error);
+        res.status(500).json({error: "Failed to fetch parking spaces"});
+    }
+});
+
+
+// Get available parking spaces for a specific parking lot name.
+router.get('/parkingspaces/:parkingSpaceName/available', async (req, res) => {
+    const parkingSpaceName = req.params.parkingSpaceName;
+    try {
+        // Assuming lastUserId being null means the space is available.
+        const availableSpaces = await prisma.parkingSpace.count({
+            where: {
+                parkingSpaceName,
+                lastUserId: null,
+            },
+        });
+        res.json({ availableSpaces });
+    } catch (error) {
+        console.error("Error fetching available parking spaces:", error);
+        res.status(500).json({ error: 'Failed to fetch available parking spaces' });
+    }
+});
+
+
 
 module.exports = router;
