@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { ProfileDropdown } from "./ProfileDropdown";
-import { User } from "./types";
+import { User } from "./types.ts";
 
 interface HeaderProps {
   user: User;
@@ -51,3 +51,5 @@ export const Header: React.FC<HeaderProps> = ({ user }) => {
     </header>
   );
 };
+
+export default Header;
