@@ -12,6 +12,16 @@ npx prisma generate
 npx prisma db push
 npm run seed
 ```
+# Python Flask
+
+### Windows
+myenv\Scripts\activate
+
+### Linux
+source myenv/bin/activate
+
+pip install flask
+
 
 # How to run openalpr (docker image):
 
