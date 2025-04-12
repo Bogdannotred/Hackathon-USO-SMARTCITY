@@ -1,6 +1,6 @@
-// firebase.ts
 import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore'; // ✅ Adăugat
 
 // Configurația Firebase
 const firebaseConfig = {
@@ -16,5 +16,7 @@ const firebaseConfig = {
 // Inițializarea Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore(app); // ✅ Adăugat
 
-export { auth, createUserWithEmailAndPassword, signInWithEmailAndPassword };
+export { auth, db, createUserWithEmailAndPassword, signInWithEmailAndPassword };
+  
