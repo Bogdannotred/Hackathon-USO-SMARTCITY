@@ -181,6 +181,14 @@ function InputDesign() {
           </label>
         </div>
 
+        {/* Added video below the upload button */}
+        <div className={styles.videoContainer}>
+          <video width="100%" controls>
+            <source src="Ai.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
         {isUploading && (
           <div className={styles.loading}>
             <div className={styles.spinner} />
