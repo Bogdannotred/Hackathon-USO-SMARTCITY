@@ -2,13 +2,15 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 24px;
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.fileUploadSection {
+  background-color: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 24px;
 }
 
 .sectionTitle {
@@ -16,269 +18,6 @@
   font-weight: 600;
   color: #1f2937;
   margin-bottom: 16px;
-}
-
-/* Parking Options */
-.parkingOptions {
-  background-color: white;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  margin-bottom: 24px;
-}
-
-.durationSelector {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.durationButton {
-  flex: 1;
-  padding: 12px;
-  border-radius: 8px;
-  border: 2px solid #e5e7eb;
-  background: white;
-  color: #4b5563;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.durationButton:hover {
-  border-color: #d1d5db;
-}
-
-.durationButton.selected {
-  border-color: #3b82f6;
-  background-color: #eff6ff;
-  color: #1e40af;
-}
-
-.priceInfo {
-  margin-bottom: 20px;
-  padding: 12px;
-  background-color: #f9fafb;
-  border-radius: 8px;
-}
-
-.priceInfo p {
-  margin: 4px 0;
-  font-size: 16px;
-  color: #4b5563;
-}
-
-.payButton {
-  width: 100%;
-  padding: 14px;
-  border-radius: 8px;
-  border: none;
-  background-color: #3b82f6;
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.payButton:hover {
-  background-color: #2563eb;
-}
-
-/* Active Ticket */
-.activeTicket {
-  background-color: white;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  margin-bottom: 24px;
-  border-left: 4px solid #10b981;
-}
-
-.ticketInfo {
-  padding: 16px;
-  background-color: #f9fafb;
-  border-radius: 8px;
-}
-
-.ticketInfo p {
-  margin: 8px 0;
-  color: #4b5563;
-}
-
-.timeLeft {
-  font-size: 24px;
-  font-weight: 700;
-  color: #10b981;
-  text-align: center;
-  margin-top: 16px !important;
-}
-
-/* Payment Modal */
-.paymentModal {
-  background-color: white;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  margin-bottom: 24px;
-}
-
-.paymentForm {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.formGroup {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.formRow {
-  display: flex;
-  gap: 16px;
-}
-
-.formRow .formGroup {
-  flex: 1;
-}
-
-.formGroup label {
-  font-size: 14px;
-  font-weight: 500;
-  color: #4b5563;
-}
-
-.formGroup input {
-  padding: 12px;
-  border-radius: 8px;
-  border: 2px solid #e5e7eb;
-  font-size: 16px;
-  transition: border-color 0.2s ease;
-}
-
-.formGroup input:focus {
-  outline: none;
-  border-color: #3b82f6;
-}
-
-.paymentSummary {
-  margin-top: 16px;
-  padding: 16px;
-  background-color: #f9fafb;
-  border-radius: 8px;
-}
-
-.paymentSummary p {
-  margin: 4px 0;
-  font-size: 16px;
-  color: #4b5563;
-}
-
-.actionButtons {
-  display: flex;
-  gap: 16px;
-  margin-top: 20px;
-}
-
-.cancelButton {
-  flex: 1;
-  padding: 16px;
-  border-radius: 12px;
-  border: 2px solid #e5e7eb;
-  background: white;
-  color: #4b5563;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.cancelButton:hover {
-  background-color: #f9fafb;
-}
-
-.confirmButton {
-  flex: 1;
-  padding: 16px;
-  border-radius: 12px;
-  border: none;
-  background-color: #3b82f6;
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.confirmButton:hover {
-  background-color: #2563eb;
-}
-
-/* Fines Section */
-.finesSection {
-  background-color: white;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  margin-bottom: 24px;
-}
-
-.finesList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.fineItem {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.fineItem:last-child {
-  border-bottom: none;
-}
-
-.fineDetails {
-  flex: 1;
-}
-
-.fineDescription {
-  font-weight: 500;
-  margin: 0 0 4px 0;
-  color: #1f2937;
-}
-
-.fineDate {
-  font-size: 14px;
-  color: #6b7280;
-  margin: 0;
-}
-
-.fineAmount {
-  font-weight: 600;
-  color: #ef4444;
-  margin: 0;
-}
-
-.noFines {
-  text-align: center;
-  color: #6b7280;
-  padding: 16px;
-}
-
-/* File Upload Section */
-.fileUploadSection {
-  background-color: white;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  margin-bottom: 24px;
 }
 
 .fileUpload {
@@ -315,89 +54,140 @@
   background-color: #f3f4f6;
 }
 
-.selectedFileName {
-  font-size: 14px;
-  color: #4b5563;
-  text-align: center;
+.previewContainer {
+  margin-top: 20px;
 }
 
-/* Video Section */
-.videoSection {
+.preview {
+  position: relative;
+  display: inline-block;
+}
+
+.previewImage {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+.detectionBox {
+  position: absolute;
+  box-sizing: border-box;
+}
+
+.classLabel {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 2px 4px;
+  font-size: 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #4b5563;
+  margin: 16px 0;
+  padding: 12px;
+  background-color: #f9fafb;
+  border-radius: 8px;
+}
+
+.spinner {
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #3b82f6;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error {
+  color: #dc2626;
+  background-color: #fef2f2;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 16px 0;
+  border-left: 3px solid #dc2626;
+}
+
+.results {
   background-color: white;
   border-radius: 12px;
   padding: 24px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  margin-top: 24px;
 }
 
-.videoContainer {
-  aspect-ratio: 16 / 9;
-  background-color: #f3f4f6;
-  border-radius: 8px;
-  overflow: hidden;
+.resultsTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-top: 0;
+  margin-bottom: 16px;
 }
 
-.videoPlaceholder {
-  width: 100%;
-  height: 100%;
+.stats {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  color: #6b7280;
+  gap: 16px;
+  margin-bottom: 16px;
+  color: #4b5563;
+  font-size: 0.875rem;
 }
 
-.playButton {
-  width: 60px;
-  height: 60px;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 50%;
+.legend {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-  color: #3b82f6;
-  margin-bottom: 12px;
-}
-
-.videoPlayer {
-  width: 100%;
-  height: 100%;
-  background-color: #1f2937;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.pauseButton {
+  gap: 24px;
   margin-top: 16px;
-  padding: 8px 16px;
-  border-radius: 8px;
-  border: none;
-  background-color: rgba(255, 255, 255, 0.2);
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
 }
 
-.pauseButton:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-/* Responsive adjustments */
+.liberColorBox {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(0, 255, 0, 0.1);
+  border: 2px solid #00FF00;
+}
+
+.ocupatColorBox {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 0, 0, 0.1);
+  border: 2px solid #FF0000;
+}
+
 @media (max-width: 640px) {
-  .formRow {
-    flex-direction: column;
-    gap: 16px;
+  .container {
+    padding: 16px;
   }
-
-  .actionButtons {
-    flex-direction: column;
+  
+  .fileUploadSection,
+  .results {
+    padding: 16px;
   }
-
-  .durationSelector {
+  
+  .stats {
     flex-direction: column;
+    gap: 8px;
+  }
+  
+  .legend {
+    flex-direction: column;
+    gap: 12px;
   }
 }
