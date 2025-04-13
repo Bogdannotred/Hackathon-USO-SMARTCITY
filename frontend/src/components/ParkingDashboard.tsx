@@ -24,7 +24,7 @@ interface ParkingEntry {
 }
 
 const ParkingDashboard: React.FC = () => {
-  const availableSpots = useParkingSpotsStore((state) => state.parkingSpots)
+  const availableSpots = useParkingSpotsStore((state) => state.parkingSpots);
 
   const [parkingHistory] = useState<ParkingEntry[]>([
     {
@@ -62,23 +62,21 @@ const ParkingDashboard: React.FC = () => {
 
   // Filter spots for Primarie location
   const primarieAvailableSpots = availableSpots.filter(
-    (spot) => spot.status === "available",
+    (spot) => spot.status === "available"
   );
   const primarieOccupiedSpots = availableSpots.filter(
-    (spot) => spot.status === "occupied",
+    (spot) => spot.status === "occupied"
   );
 
   // Active parking entries (no exit time)
   const activeEntries = parkingHistory.filter(
-    (entry) => entry.exitTime === null,
+    (entry) => entry.exitTime === null
   );
 
   return (
     <div className="parking-dashboard">
       <Header />
       <main className="dashboard-content">
-        <h1 className="dashboard-title">Smart Parking System</h1>
-
         <div className="dashboard-row">
           <div className="dashboard-column main-column">
             <div className="location-section">
