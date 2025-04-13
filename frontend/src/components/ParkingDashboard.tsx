@@ -5,6 +5,7 @@ import UserParking from "./UserParking";
 import RemainingTime from "./RemainingTime";
 import ParkingMap from "./ParkingMap";
 import "./ParkingDashboard.css";
+import { useParkingSpotsStore } from "../storage/parking-storage";
 
 interface Spot {
   id: number | string;
@@ -23,33 +24,7 @@ interface ParkingEntry {
 }
 
 const ParkingDashboard: React.FC = () => {
-  const [availableSpots] = useState<Spot[]>([
-    {
-      id: 1,
-      number: "A1",
-      status: "available",
-    },
-    {
-      id: 2,
-      number: "A2",
-      status: "occupied",
-    },
-    {
-      id: 3,
-      number: "B1",
-      status: "available",
-    },
-    {
-      id: 4,
-      number: "B2",
-      status: "available",
-    },
-    {
-      id: 5,
-      number: "C1",
-      status: "occupied",
-    },
-  ]);
+  const availableSpots = useParkingSpotsStore((state) => state.parkingSpots)
 
   const [parkingHistory] = useState<ParkingEntry[]>([
     {

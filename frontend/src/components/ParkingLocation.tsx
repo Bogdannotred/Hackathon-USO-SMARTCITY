@@ -58,6 +58,7 @@ const ParkingLocation: React.FC<ParkingLocationProps> = ({
             {availableSpots.map((spot) => (
               <ParkingSpot
                 key={spot.id}
+                id={spot.id}
                 number={spot.number}
                 status="available"
                 onViewDetails={() => toggleSpotDetails(spot)}
@@ -83,6 +84,7 @@ const ParkingLocation: React.FC<ParkingLocationProps> = ({
             {occupiedSpots.map((spot) => (
               <ParkingSpot
                 key={spot.id}
+                id={spot.id}
                 number={spot.number}
                 status="occupied"
               />

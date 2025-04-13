@@ -12,7 +12,6 @@ interface UserParkingProps {
 const UserParking: React.FC<UserParkingProps> = ({
   spot,
   location,
-  entryTime,
   remainingTime,
   vehicle,
 }) => {
