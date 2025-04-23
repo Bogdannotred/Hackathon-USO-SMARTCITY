@@ -1,3 +1,5 @@
+[![Watch the video](https://img.youtube.com/vi/ID_VIDEO/maxresdefault.jpg)](https://youtu.be/zb3RHRTwa5k)
+
 # SAGLPP
 
 Sistem automatizat de gestionare a locurilor de parcare publice
